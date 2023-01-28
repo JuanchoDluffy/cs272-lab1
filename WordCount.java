@@ -13,7 +13,7 @@ public class WordCount {
         return lines;
     }// end of line count method
 
-    public static void countWords(String inputString, String FILEname) throws IOException {
+    public static void countWords(String inputString) throws IOException {
         // Split input string into words
         String[] words = inputString.split(",");
         // convert all words to lower case
@@ -31,7 +31,7 @@ public class WordCount {
         // Create a map to store word counts
         Map<String, Integer> wordCounts = new HashMap<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(FILEname))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("pg100.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 // Clean the line from special characters and convert it to lower case
@@ -62,6 +62,6 @@ public class WordCount {
     public static void main(String[] args) throws Exception {
         int num = lineCount("pg100.txt");
         System.out.println(num);
-        countWords("the,,she,her,language,king,king's,he's,thus", "pg100.txt");
+        countWords("the,cat,goat");
     }// end of main method
 }// end of class
