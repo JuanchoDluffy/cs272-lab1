@@ -62,6 +62,6 @@ public class WordCount {
     public static void main(String[] args) throws Exception {
         int num = lineCount("pg100.txt");
         System.out.println(num);
-        countWords("thus,he,her,him,dragon,honor,run,scape,king,revange,thou", "pg100.txt", "WordCount.csv");
+        countWords("thus,he,her,him,dragon,honor,run,scape,king,revange,thou,shall", "pg100.txt", "WordCount.csv");
     }// end of main method
 }// end of class
