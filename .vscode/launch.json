@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Welcome",
+            "request": "launch",
+            "mainClass": "Welcome",
+            "projectName": "cs272-lab1_c65d4531"
+        },
+        {
+            "type": "java",
+            "name": "Launch WordCount",
+            "request": "launch",
+            "mainClass": "WordCount",
+            "projectName": "cs272-lab1_c65d4531"
+        }
+    ]
+}

@@ -2,9 +2,9 @@ import java.io.*;
 import java.util.*;
 
 public class WordCount {
-    public static int lineCount(String fileName) throws IOException {
+    public static int lineCount(String fileNam) throws IOException {
         // read text file and count the number of lines
-        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        BufferedReader reader = new BufferedReader(new FileReader(fileNam));
         int lines = 0;
         while (reader.readLine() != null) {
             lines++;
@@ -13,7 +13,7 @@ public class WordCount {
         return lines;
     }// end of line count method
 
-    public static void countWords(String inputString) throws IOException {
+    public static void countWords(String inputString, String fileToRead, String fileToWrite) throws IOException {
         // Split input string into words
         String[] words = inputString.split(",");
         // convert all words to lower case
@@ -31,7 +31,7 @@ public class WordCount {
         // Create a map to store word counts
         Map<String, Integer> wordCounts = new HashMap<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("pg100.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileToRead))) {
             String line;
             while ((line = br.readLine()) != null) {
                 // Clean the line from special characters and convert it to lower case
@@ -52,7 +52,7 @@ public class WordCount {
         // remove key for empty string to avoid priting count of ""
         wordCounts.remove("");
         // Write the word counts to the output file
-        try (PrintWriter writer = new PrintWriter(new File("WordCount.csv"))) {
+        try (PrintWriter writer = new PrintWriter(new File(fileToWrite))) {
             for (Map.Entry<String, Integer> entry : wordCounts.entrySet()) {
                 writer.println(entry.getKey() + " " + entry.getValue());
             }
@@ -62,6 +62,6 @@ public class WordCount {
     public static void main(String[] args) throws Exception {
         int num = lineCount("pg100.txt");
         System.out.println(num);
-        countWords("the,cat,goat");
+        countWords("thus", "pg100.txt", "WordCount.csv");
     }// end of main method
 }// end of class
