@@ -60,8 +60,11 @@ public class WordCount {
     }// end of count words method
 
     public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
         int num = lineCount("pg100.txt");
         System.out.println(num);
-        countWords("thus,he,her,him,dragon,honor,run,scape,king,revange,thou,shall", "pg100.txt", "WordCount.csv");
+        String userIn = scan.nextLine();
+        countWords(userIn, "pg100.txt", "WordCount.csv");
+        scan.close();
     }// end of main method
 }// end of class
